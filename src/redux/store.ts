@@ -5,6 +5,7 @@ import UserReducer from './slice/user'
 import metaReducer from './slice/meta'
 import componentReducer from './slice/component'
 import notificationReducer from './slice/notification'
+import chatReducer from './slice/chat'
 
 
 const store = configureStore({
@@ -13,7 +14,8 @@ const store = configureStore({
         user:UserReducer,
         meta:metaReducer,
         component:componentReducer,
-        notification:notificationReducer
+        notification:notificationReducer,
+        chat: chatReducer
     }
 })
 

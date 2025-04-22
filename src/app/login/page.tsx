@@ -8,7 +8,7 @@ export default function LoginPage(){
           <div className="flex flex-row overflow-hidden h-screen w-screen bg-black items-center justify-center">
                     <KnowMore/>
                     <div className="w-full max-w-[40vw] h-full flex-col gap-[4vh] flex items-center justify-center">
-                        <SplitText text={text} className="text-white whitespace-pre-wrap text-4xl"/>
+                    <SplitText text="META LEARN Login" className="text-white font-semibold text-3xl"/>
                         <LoginForm/>
                     </div>
                 </div>

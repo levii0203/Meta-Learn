@@ -47,7 +47,6 @@ export default function LoginForm() {
        if(!loadPg.current){
            const r = await fetch('/api/login',{method:'GET'});
            const res:{message:string} = await r.json()
-           console.log(res.message)
            loadPg.current = true;
        }
     }

@@ -59,7 +59,7 @@ export default function NavBar() {
         }
     },[])
     return (
-    <Navbar className="h-[12vh] w-full sticky">
+    <Navbar className="h-[8vh] z-100 w-full sticky">
       <NavbarBrand className="w-full">
         <AcmeLogo />
         <p className="font-bold text-inherit">METALEARN</p>

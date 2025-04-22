@@ -40,7 +40,7 @@ export default function BuyCourseCard({meta}:any){
     return (
         <div className="w-full max-w-[280px] bg-white border hover:scale-95 hover:shadow-zinc-600 hover:shadow-lg border-gray-200 rounded-lg shadow-md dark:bg-zinc-800 dark:border-gray-700">
         <a href="#">
-            <img className="p-4 rounded-t-lg" src="/docs/images/products/apple-watch.png" alt="Image" />
+            <img className="p-4 rounded-t-lg" src="https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2023/02/how-to-create-online-course.png" alt="Image" />
         </a>
         <div className="px-5 mt-12 pb-3">
             <a href="#">

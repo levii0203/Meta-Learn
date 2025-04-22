@@ -19,7 +19,7 @@ export async function POST(req:NextRequest){
         const reqData = await req.json();
         const {courseId} = reqData;
         const myCourses = await dbRes.query( `UPDATE user_courses SET certificated = true WHERE course_id = $1 `,[courseId]);
-        return NextResponse .json({message:"GET /api/certificate/mint: successful",meta:null,status:200})
+        return NextResponse .json({message:"GET /api/certificate/mint: successful",meta:myCourses.rows[0],status:200})
     }
     catch(err){
         console.error(err);

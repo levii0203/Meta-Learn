@@ -39,8 +39,8 @@ const UserSlice=createSlice({
                 state.role=undefined;
             })
             .addCase(SaveUser.fulfilled,(state,action)=>{
-                state.firstName=action.payload.firstName;
-                state.lastName=action.payload.lastName;
+                state.firstName=action.payload.firstname;
+                state.lastName=action.payload.lastname;
                 state.email=action.payload.email;
                 state.age=action.payload.age;
                 state.address=action.payload.address;

@@ -7,6 +7,10 @@ interface courseId {
     courseId:number
 }
 
+interface tokenId{
+    tokenId:number
+}
+
 interface checkCertArg {
     courseId:number,
     signer_address:string
@@ -33,5 +37,17 @@ export const CheckCertificateFunction = async ({courseId,signer_address}:checkCe
             console.error(error);
             return null;
         }
+}
+
+export const CheckCertificateCourseIdFunction = async ({tokenId}:tokenId)=>{
+    try {
+        const provider = await getProvider();
+        const contract = new ethers.Contract(CertificateContractAddress, CertificateContractABI, provider);
+        const tx = await contract._checkCourse(tokenId);
+        return tx;
+    } catch(error){
+        console.error(error);
+        return null;
+    }
 }
 

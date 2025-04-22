@@ -7,6 +7,7 @@ interface meta{
     cert_meta:Array<any>,
     currTitle:string|null,
     currCourseId:number|null,
+    currCourse:any
 }
 
 const initialState:meta = {
@@ -16,6 +17,7 @@ const initialState:meta = {
     cert_meta:[],
     currTitle:null,
     currCourseId:null,
+    currCourse:null,
 }
 
 const metaSlice = createSlice({
@@ -39,8 +41,11 @@ const metaSlice = createSlice({
         },
         setCertMeta: (state,action)=>{
             state.cert_meta = action.payload;
+        },
+        setCurrCourse: (state,action)=>{
+            state.currCourse = action.payload;
         }
     }
 })
-export const {setCourses, setCurrTitle, setCurrCourseId , setMyCourses , setCertCourses , setCertMeta} = metaSlice.actions;
+export const {setCourses, setCurrTitle, setCurrCourseId , setMyCourses , setCertCourses , setCertMeta , setCurrCourse} = metaSlice.actions;
 export default metaSlice.reducer;

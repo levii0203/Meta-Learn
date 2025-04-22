@@ -15,6 +15,8 @@ import Certifications from "@/components/certification/certificates";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { setComponent } from "@/redux/slice/component";
 import CourseVisit from "@/components/Course/visit/visit";
+import Certificate from "@/components/certificate/Certificate";
+import ChatbotLayout from "@/components/chatbot/layout";
 
 
 
@@ -37,6 +39,8 @@ export default function Page(){
             case "StudentCertifications": return <Certifications/>
             case "StudentCourses": return <StudentDashboardCourses/>
             case "VisitCourse": return <CourseVisit/>
+            case "Certificate": return <Certificate/>
+            case  "Chatbot": return <ChatbotLayout/>
         }
     };
     useEffect(()=>{
@@ -54,6 +58,7 @@ export default function Page(){
                             <li className="py-3 px-4 w-full hover:rounded-l-lg hover:bg-zinc-700 cursor-pointer hover:bg-blend-soft-light items-center justify-center font-medium focus:bg-white focus:text-black" onClick={()=>dispatch(setComponent("StudentDashboard"))}><a href="#">Dashboard</a></li>
                             <li className="py-3 px-4 w-full hover:rounded-l-lg hover:bg-zinc-700 cursor-pointer hover:bg-blend-soft-light items-center justify-center font-medium"  onClick={()=>dispatch(setComponent("StudentCourses"))}><a href="#">Courses</a></li>
                             <li className="py-3 px-4 w-full hover:rounded-l-lg hover:bg-zinc-700 cursor-pointer hover:bg-blend-soft-light items-center justify-center font-medium"><a href="#">Assignments</a></li>
+                            <li className="py-3 px-4 w-full hover:rounded-l-lg hover:bg-zinc-700 cursor-pointer hover:bg-blend-soft-light items-center justify-center font-medium" onClick={()=>dispatch(setComponent("Chatbot"))}><a href="#">AI Help</a></li>
                             <li className="py-3 px-4 w-full hover:rounded-l-lg hover:bg-zinc-700 cursor-pointer hover:bg-blend-soft-light items-center justify-center font-medium"><a href="#">Achievements</a></li>
                             <li className="py-3 px-4 w-full hover:rounded-l-lg hover:bg-zinc-700 cursor-pointer hover:bg-blend-soft-light items-center justify-center font-medium"  onClick={()=>dispatch(setComponent("StudentCertifications"))}><a href="#">Certifications</a></li>
                             <li className="py-3 px-4 w-full hover:rounded-l-lg hover:bg-zinc-700 cursor-pointer hover:bg-blend-soft-light items-center justify-center font-medium"><a href="#">Setting</a></li>
@@ -64,7 +69,7 @@ export default function Page(){
                     {renderComponent()} 
                 </Components>
             </div>
-            <div className="fixed bottom-0 right-0 max-w-[300px] w-full z-50 p-4">
+            <div className="fixed z-[200] bottom-0 right-0 max-w-[300px] w-full p-4">
             <ul className=" flex flex-col ml-auto mt-full mt-[4%] gap-4 h-auto">
             <AnimatePresence initial={false} mode="popLayout">
                 {notifications.map((notification, id) => (

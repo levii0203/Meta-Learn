@@ -48,7 +48,7 @@ export default function StudentDashboardCourses(){
     },[])
 
     return (
-        <div className="h-full w-full gap-8 py-4 flex flex-col">
+        <div className="h-full w-full gap-8 py-4 flex overflow-y-auto flex-col">
             <div className="flex  justify-between w-full px-8">
                 <div className="flex w-full items-center gap-6">
                     <p className="flex min-w-fit font-semibold text-lg">What do you wanna learn?.</p>
@@ -79,22 +79,22 @@ export default function StudentDashboardCourses(){
             <div className="flex w-full gap-6 flex-col px-8">
                 <p className="flex w-full font-semibold text-lg">My Courses</p>
                 <div className="w-full gap-4 flex flex-wrap">
-                    {myCourses.map((course)=>{
-                        return <MyCourseCard meta={course}/>
+                    {myCourses.map((course,key)=>{
+                        return <MyCourseCard meta={course} key={key}/>
                     })}
                 </div>
             </div>
             <div className="flex w-full gap-6 pb-12  flex-col px-8">
                 <p className="flex w-full font-semibold text-lg">Get started with these courses</p>
                 <div className="w-full flex-wrap gap-x-8 gap-y-6 rap flex">
-                    {courses.map((course)=>{
-                        return <BuyCourseCard meta={course}/>
+                    {courses.map((course,key)=>{
+                        return <BuyCourseCard meta={course} key={key}/>
                     })}
                 </div>
             </div>
            
 
-        <footer className="bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4">
+        <footer className="bg-white rounded-lg  shadow-sm dark:bg-gray-900 m-4">
             <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
             <div className="sm:flex sm:items-center sm:justify-between">
                 <a href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
